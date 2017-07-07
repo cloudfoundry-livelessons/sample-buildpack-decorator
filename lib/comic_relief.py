@@ -1,7 +1,4 @@
-#!/usr/bin/env bash
-# bin/compile <build-dir> <cache-dir> <env-dir>
-
-# spring-config-decorator
+# comic-relief-decorator
 #
 # Copyright (c) 2015-Present Pivotal Software, Inc. All Rights Reserved.
 #
@@ -17,13 +14,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-BIN_DIR=$(cd $(dirname $0); pwd)
-ROOT_DIR=$(dirname $BIN_DIR)
-BUILD_DIR=$1
-CACHE_DIR=$2
-ENV_DIR=$3
+import urllib2
+import json
 
-mkdir -p $BUILD_DIR/comic_relief
-mkdir -p $BUILD_DIR/.profile.d
-cp $ROOT_DIR/lib/comic_relief.py $BUILD_DIR/comic_relief
-cp $ROOT_DIR/lib/comic_relief.sh $BUILD_DIR/.profile.d
+def main():
+    key = "JOKE"
+    value = json.loads(urllib2.urlopen("http://api.icndb.com/jokes/random").read())['value']['joke']
+    print key, value
+
+def detect():
+    print 'comic-relief'
+
+if __name__ == "__main__":
+    main()

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# spring-config-decorator
+# comic-relief-decorator
 #
 # Copyright (c) 2015-Present Pivotal Software, Inc. All Rights Reserved.
 #
@@ -27,4 +27,4 @@
 while read key value
 do
 	export "$key"="$value"
-done <<< "`python ~/spring_config/spring_config.py`"
+done <<< "`python ~/comic_relief/comic_relief.py`"

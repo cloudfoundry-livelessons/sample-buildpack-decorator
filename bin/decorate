@@ -23,4 +23,4 @@ BUILD_DIR=$1
 
 export PYTHONPATH="${PYTHONPATH}:$ROOT_DIR/lib"
 
-python -c 'from spring_config import detect; detect()'
+python -c 'from comic_relief import detect; detect()'
